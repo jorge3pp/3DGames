@@ -133,7 +133,7 @@ namespace Engine.Base
                 if (rc.Enabled == true) rc.Draw(camera);
             }
         }
-        public float getDistanceTo(GameObject otherObject)
+        public float GetDistanceTo(GameObject otherObject)
         {
             return Vector3.Distance(Location, otherObject.Location);
             //GameObject current = this;
@@ -168,17 +168,14 @@ namespace Engine.Base
         {
             return components.Find(c => c.GetType() == componentType);
         }
-
         public T GetComponent<T>() where T : Component
         {
             return (T)components.Find(c => c.GetType() == typeof(T) || c.GetType().IsSubclassOf(typeof(T)));
         }
-
         public List<Component> GetComponents(Type componentType)
         {
             return components.FindAll(c => c.GetType() == componentType).Cast<Component>().ToList();
         }
-
         //TO DO: possibly clean up conversion from List<Component> to List<T>
         public List<T> GetComponents<T>() where T : Component
         {
