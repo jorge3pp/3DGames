@@ -58,29 +58,34 @@ namespace Engine.Base
             isInitialized = true;
         }
 
-        public void AddComponent (Component newComponent)
+        public void AddComponent (Component component)
         {
-            newComponent.Owner = this;
+            component.Owner = this;
 
             if (isInitialized)
             {
-                newComponent.Initialize();
+                component.Initialize();
             }
 
-            newComponent.OnDestroy += NewComponent_OnDestroy;
-            components.Add(newComponent);
+            component.OnDestroy += Component_OnDestroy;
+            components.Add(component);
         }
-        private void NewComponent_OnDestroy(string ID)
+        private void Component_OnDestroy(string id)
         {
-            awaitingRemoval.Add(ID);
+            awaitingRemoval.Add(id);
         }
 
         public void RemoveComponent(int index)
         {
-            components.RemoveAt(index);
+            if(index< components.Count) components.RemoveAt(index);
         }
         public void RemoveComponent(string id)
         {
+            /*components.IndexOf(components.Find(c => c.ID == id));
+              for(int i=0;i<components.Count;i++){
+                if(components[i].ID==id) RemoveComponent(i);
+              }
+            */
             int index = -1;
             for (int i= 0; i < components.Count;i++)
             {
@@ -91,58 +96,62 @@ namespace Engine.Base
             }
             if (index != -1) RemoveComponent(index);
         }
-        public void RemoveComponent(Component c)
+        public void RemoveComponent(Component component)
         {
-            components.Remove(c);
+            components.Remove(component);
         }
-        public void Destroy()
+        public void Destroy(bool shouldDestroyChildren)
         {
             components.Clear();
             //Raise the OnDestroy event
-            OnDestroy.Invoke(ID);
+            if (OnDestroy != null)
+            {
+                OnDestroy(ID);
+                //OnDestroy.Invoke(ID);
+            }
         }
-        public void Update()
+        public virtual void Update()
         {
+            //loop over components
+            //components may call Destroy
+            //cannot modify collection while in a foreach
            foreach(Component c in components)
             {
-                if (c.Enabled == true)
-                {
-                    c.Update();
-                }
+                if(c.Enabled) c.Update();
             }
 
+           //store IDs in a list for removal
            foreach(string s in awaitingRemoval)
             {
                 RemoveComponent(s);
             }
         }
-        public void Draw(CameraComponent cc)
+        public void Draw(CameraComponent camera)
         {
-            foreach(RenderComponent rc in components)
+            foreach (RenderComponent rc in components.OfType<RenderComponent>())
             {
-                if (rc.Enabled == true) rc.Draw(cc);
+                if (rc.Enabled == true) rc.Draw(camera);
             }
         }
-
-        public float getDistanceTo(GameObject go)
+        public float getDistanceTo(GameObject otherObject)
         {
-            GameObject current = this;
-            
-            return current.getDistanceTo(go);
+            return Vector3.Distance(Location, otherObject.Location);
+            //GameObject current = this;
+            //return current.getDistanceTo(otherObject);
+        }
+        public bool HasComponent<T>() where T : Component
+        {
+            return components.Any(c=> c.GetType() == typeof(T) || c.GetType().IsSubclassOf(typeof(T)));
         }
 
-        public bool hasComponent()
+        public Component getComponent(string id)
         {
-            return true;
-        }
-
-        public Component getComponent(string s)
-        {
+            /*
             Component result = null;
             int index = -1;
             for(int i=0;i<components.Count;i++)
             {
-                if (components[i].ID == s)
+                if (components[i].ID == id)
                 {
                     index = i;
                 }
@@ -151,12 +160,29 @@ namespace Engine.Base
             if (index != -1) result = components[index];
 
             return result;
+            */
+
+            return components.Find(c => c.ID == id);
         }
-        public Component getComponent(Type t)
+        public Component getComponent(Type componentType)
         {
-            Component result = null;
-            
-            return result;
+            return components.Find(c => c.GetType() == componentType);
+        }
+
+        public T GetComponent<T>() where T : Component
+        {
+            return (T)components.Find(c => c.GetType() == typeof(T) || c.GetType().IsSubclassOf(typeof(T)));
+        }
+
+        public List<Component> GetComponents(Type componentType)
+        {
+            return components.FindAll(c => c.GetType() == componentType).Cast<Component>().ToList();
+        }
+
+        //TO DO: possibly clean up conversion from List<Component> to List<T>
+        public List<T> GetComponents<T>() where T : Component
+        {
+            return components.FindAll(c => c.GetType() == typeof(T) || c.GetType().IsSubclassOf(typeof(T))).Cast<T>().ToList();
         }
     }
 }
