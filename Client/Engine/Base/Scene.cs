@@ -71,7 +71,6 @@ namespace Engine.Base
             {
                 return GO.GetComponent<T>();
             } else return null;
-          
         }
 
         public virtual void Initialize()
