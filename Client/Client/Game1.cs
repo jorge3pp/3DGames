@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Engine;
+using Engine.Managers;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -11,19 +13,16 @@ namespace Client
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        GameEngine engine;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-        }
 
-        /// <summary>
-        /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
-        /// related content.  Calling base.Initialize will enumerate through any components
-        /// and initialize them as well.
-        /// </summary>
+            engine = new GameEngine(this);
+        }
+        
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
@@ -59,10 +58,10 @@ namespace Client
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if (InputManager.IsKeyPressed(Keys.Escape))
+            {
                 Exit();
-
-            // TODO: Add your update logic here
+            }
 
             base.Update(gameTime);
         }

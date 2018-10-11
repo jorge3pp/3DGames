@@ -29,7 +29,7 @@ namespace Engine.Base
 
         private void NewObject_OnDestroy(string id)
         {
-
+            awaitingRemoval.Add(id);
         }
 
         public List<GameObject> GetGameObjects<T>()
@@ -62,7 +62,15 @@ namespace Engine.Base
             return gameObjects.Find(go => go.GetType() == typeof(T));
         }
 
-        public void RemoveObject(string objectID) { }
+        public void RemoveObject(string objectID)
+        {
+            int index = GetObjectIndexInPool(objectID);
+
+            if (index != -1)
+            {
+                gameObjects.RemoveAt(index);
+            }
+        }
 
         public T GetComponentInObject<T>(string objectID) where T : Component
         {

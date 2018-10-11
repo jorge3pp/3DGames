@@ -52,11 +52,14 @@
     <Compile Include="Base\RenderComponent.cs" />
     <Compile Include="Base\Scene.cs" />
     <Compile Include="Base\ScriptComponent.cs" />
+    <Compile Include="GameEngine.cs" />
     <Compile Include="GameUtilities.cs" />
+    <Compile Include="Managers\CameraManager.cs" />
+    <Compile Include="Managers\FrameRateCounter.cs" />
+    <Compile Include="Managers\InputManager.cs" />
+    <Compile Include="Managers\PhysicsManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Managers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
