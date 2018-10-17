@@ -1,4 +1,5 @@
-﻿using Engine;
+﻿using Client.Scenes;
+using Engine;
 using Engine.Managers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -25,7 +26,11 @@ namespace Client
         
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            GameUtilities.Content = Content;
+            GameUtilities.SceneConetent = Content;
+            GameUtilities.GraphicsDevice = GraphicsDevice;
+
+            engine.LoadScene(new SimpleScene());
 
             base.Initialize();
         }

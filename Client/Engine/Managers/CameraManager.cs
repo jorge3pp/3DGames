@@ -22,7 +22,16 @@ namespace Engine.Managers
 
         public static void SetActiveCamera(string id)
         {
-            if (id != ActiveCamera.ID)
+            if (null != activeCamera)
+            {
+                if (id != activeCamera.ID)
+                {
+                    if (cameras.ContainsKey(id))
+                    {
+                        activeCamera = cameras[id];
+                    }
+                }
+            }else
             {
                 if (cameras.ContainsKey(id))
                 {
