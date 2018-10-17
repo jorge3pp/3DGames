@@ -10,7 +10,7 @@ namespace Engine.Managers
 {
     public sealed class CameraManager : GameComponent
     {
-        private static Dictionary<string, CameraComponent> cameras;
+        private static Dictionary<string, CameraComponent> cameras = new Dictionary<string, CameraComponent>();
 
         private static CameraComponent activeCamera;
         public static CameraComponent ActiveCamera { get { return activeCamera; } }
@@ -43,8 +43,8 @@ namespace Engine.Managers
         {
             if (!cameras.ContainsKey(camera.ID))
             {
-                cameras.Add(camera.ID,camera);
-                if (cameras.Count==1) activeCamera = camera;
+                cameras.Add(camera.ID, camera);
+                if (cameras.Count == 1) SetActiveCamera(camera.ID);
             }
         }
         public static void Clear()

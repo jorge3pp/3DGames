@@ -21,7 +21,7 @@ namespace Engine
     {
         public static GraphicsDevice GraphicsDevice { get; set; }
         public static GameTime Time { get; set; }
-        public static float DeltaTime {get;set;}
+        public static float DeltaTime { get { return (float)Time.ElapsedGameTime.TotalSeconds; } }
 		
 		public static ContentManager Content { get; set; }
 		public static ContentManager SceneConetent {get;set;}

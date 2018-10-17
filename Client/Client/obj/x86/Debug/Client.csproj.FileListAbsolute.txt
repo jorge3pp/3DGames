@@ -52,3 +52,12 @@ C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\obj\x86\Debug\Client.c
 C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\obj\x86\Debug\Client.csproj.CopyComplete
 C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\obj\x86\Debug\Client.exe
 C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\obj\x86\Debug\Client.pdb
+C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\bin\Windows\x86\Debug\Content\Textures\cubecover.xnb
+C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\bin\Windows\x86\Debug\Content\Textures\cubecover_0.xnb
+C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\bin\Windows\x86\Debug\Content\Models\cube.xnb
+C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\bin\Windows\x86\Debug\Content\Textures\board.xnb
+C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\bin\Windows\x86\Debug\Content\Textures\board_0.xnb
+C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\bin\Windows\x86\Debug\Content\Textures\robot.xnb
+C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\bin\Windows\x86\Debug\Content\Textures\robot_0.xnb
+C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\bin\Windows\x86\Debug\Content\Models\plane.xnb
+C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\bin\Windows\x86\Debug\Content\Models\robot.xnb

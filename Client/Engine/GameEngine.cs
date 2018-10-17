@@ -59,6 +59,11 @@ namespace Engine
             Game.Window.Title = "FPS: " + FrameRateCounter.FrameRate +
                 ", DT: " + GameUtilities.DeltaTime;
 
+            if (activeScene != null)
+            {
+                activeScene.Update();
+            }
+
             base.Update(gameTime);
         }
 

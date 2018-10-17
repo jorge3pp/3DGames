@@ -117,7 +117,7 @@ namespace Engine.Base
             //cannot modify collection while in a foreach
            foreach(Component c in components)
             {
-                if(c.Enabled) c.Update();
+                c.Update();
             }
 
            //store IDs in a list for removal

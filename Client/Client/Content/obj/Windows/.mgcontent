@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/S00184395/Documents/GitHub/3DGames/Client/Client/Content/Models/cube.fbx</File>
+    <File>C:/Users/S00184395/Documents/GitHub/3DGames/Client/Client/Content/Textures/cubecover.png</File>
+    <File>C:/Users/S00184395/Documents/GitHub/3DGames/Client/Client/Content/Models/plane.fbx</File>
+    <File>C:/Users/S00184395/Documents/GitHub/3DGames/Client/Client/Content/Models/robot.FBX</File>
+    <File>C:/Users/S00184395/Documents/GitHub/3DGames/Client/Client/Content/Textures/board.jpg</File>
+    <File>C:/Users/S00184395/Documents/GitHub/3DGames/Client/Client/Content/Textures/robot.png</File>
+  </SourceFiles>
+</SourceFileCollection>

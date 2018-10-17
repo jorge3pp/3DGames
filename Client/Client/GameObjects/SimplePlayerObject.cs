@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Engine.Base;
+using Engine.Components.Input;
 using Engine.Components.Cameras;
 using Microsoft.Xna.Framework;
 
@@ -18,6 +19,7 @@ namespace Client.GameObjects
         public override void Initialize()
         {
             AddComponent(new FixedCamera(new Vector3(0, 0, -1)));
+            AddComponent(new PlayerMovementController(10));
 
             base.Initialize();
         }

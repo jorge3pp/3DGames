@@ -13,13 +13,17 @@ namespace Client
     public class Game1 : Game
     {
         GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
         GameEngine engine;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferHeight = 720;
+            graphics.PreferredBackBufferWidth = 1280;
+            graphics.ApplyChanges();
+
             Content.RootDirectory = "Content";
+            IsMouseVisible = true;
 
             engine = new GameEngine(this);
         }
@@ -42,8 +46,7 @@ namespace Client
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
-
+           
             // TODO: use this.Content to load your game content here
         }
 

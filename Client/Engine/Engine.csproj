@@ -54,6 +54,7 @@
     <Compile Include="Base\ScriptComponent.cs" />
     <Compile Include="Components\Cameras\FixedCamera.cs" />
     <Compile Include="Components\Graphics\BasicEffectModel.cs" />
+    <Compile Include="Components\Input\PlayerMovementController.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="GameUtilities.cs" />
     <Compile Include="Managers\CameraManager.cs" />
@@ -62,8 +63,6 @@
     <Compile Include="Managers\PhysicsManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Components\Input\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
