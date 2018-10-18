@@ -44,9 +44,13 @@
     <Compile Include="Game1.cs" />
     <Compile Include="GameObjects\SimpleMeshObject.cs" />
     <Compile Include="GameObjects\SimplePlayerObject.cs" />
+    <Compile Include="GameObjects\Waypoint.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenes\SimpleScene.cs" />
+    <Compile Include="Scripts\BobbingObject.cs" />
+    <Compile Include="Scripts\RotateObject.cs" />
+    <Compile Include="Scripts\WaypointFollowScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

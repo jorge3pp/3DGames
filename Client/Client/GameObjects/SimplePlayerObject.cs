@@ -7,6 +7,7 @@ using Engine.Base;
 using Engine.Components.Input;
 using Engine.Components.Cameras;
 using Microsoft.Xna.Framework;
+using Client.Scripts;
 
 namespace Client.GameObjects
 {
@@ -19,7 +20,7 @@ namespace Client.GameObjects
         public override void Initialize()
         {
             AddComponent(new FixedCamera(new Vector3(0, 0, -1)));
-            AddComponent(new PlayerMovementController(10));
+            AddComponent(new PlayerMovementController(20));
 
             base.Initialize();
         }

@@ -1,4 +1,5 @@
-﻿using Engine.Base;
+﻿using Client.Scripts;
+using Engine.Base;
 using Engine.Components.Graphics;
 using Microsoft.Xna.Framework;
 using System;
@@ -20,6 +21,19 @@ namespace Client.GameObjects
         public override void Initialize()
         {
             AddComponent(new BasicEffectModel(asset));
+            AddComponent(new RotateObject(new Vector3(0, 30, 0)));
+            //AddComponent(new BobbingObject(10.0f));
+
+
+            List<Vector3> loc = new List<Vector3>();
+
+            List<GameObject> waypoints = Scene.GetGameObjects<Waypoint>();
+            foreach(Waypoint wp in waypoints)
+            {
+                loc.Add(wp.Location);
+            }
+
+            AddComponent(new WaypointFollowScript(loc));
 
             base.Initialize();
         }

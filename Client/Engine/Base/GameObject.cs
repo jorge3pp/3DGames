@@ -100,6 +100,12 @@ namespace Engine.Base
         {
             components.Remove(component);
         }
+        public void RemoveComponent<T>()
+        {
+            int index = components.FindIndex(c => c.GetType() == typeof(T) || c.GetType().IsSubclassOf(typeof(T)));
+
+            if (index != -1) RemoveComponent(index);
+        }
         public void Destroy(bool shouldDestroyChildren)
         {
             components.Clear();

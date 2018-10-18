@@ -39,7 +39,15 @@ namespace Engine.Components.Input
             {
                 Owner.World *= Matrix.CreateTranslation(new Vector3(0 , 0, MovementSpeed * GameUtilities.DeltaTime));
             }
-            
+            if (InputManager.IsKeyHeld(Keys.Space))
+            {
+                Owner.World *= Matrix.CreateTranslation(new Vector3(0, MovementSpeed * GameUtilities.DeltaTime, 0));
+            }
+            if (InputManager.IsKeyHeld(Keys.LeftControl))
+            {
+                Owner.World *= Matrix.CreateTranslation(new Vector3(0, -MovementSpeed * GameUtilities.DeltaTime, 0));
+            }
+
 
             base.Update();
         }
