@@ -48,6 +48,12 @@ namespace Engine.Base
             Children = new List<GameObject>();
         }
 
+        public virtual void PostInitialize() {
+            foreach(var c in components)
+            {
+                c.PostInitialize();
+            }
+        }
         public virtual void Initialize()
         {
             foreach(Component c in components)

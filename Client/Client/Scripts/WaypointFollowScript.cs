@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Client.GameObjects;
 using Engine;
 using Engine.Base;
 using Microsoft.Xna.Framework;
@@ -15,6 +16,16 @@ namespace Client.Scripts
         public List<Vector3> Locations { get { return locations; } }
 
         public int currentIndex { get; set; }
+
+        public WaypointFollowScript(GameObject go) : base()
+        {
+            List<GameObject> waypoints = go.Scene.GetGameObjects<Waypoint>();
+            foreach (Waypoint wp in waypoints)
+            {
+                Locations.Add(wp.Location);
+            }
+            
+        }
 
         public WaypointFollowScript(List<Vector3> loc) : base()
         {

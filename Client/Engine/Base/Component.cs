@@ -24,6 +24,7 @@ namespace Engine.Base
             Enabled = true;
         }
 
+        public virtual void PostInitialize() { }
         public virtual void Initialize() { }
         public virtual void Update() { }
         public virtual void Destroy()

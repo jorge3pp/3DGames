@@ -86,9 +86,21 @@ namespace Engine.Base
             foreach (GameObject go in gameObjects)
             {
                 go.Initialize();
+                go.PostInitialize();
                 go.Enabled = true;
             }
+
             isInitialized = true;
+
+
+            /*UPDATE 6.1
+             
+            gameObjects.ForEach(go => go.Initialize());
+            isInitialized = true;
+
+            gameObjects.ForEach(go => go.PostInitialize());
+             
+             */
         }
 
         public virtual void Update()
