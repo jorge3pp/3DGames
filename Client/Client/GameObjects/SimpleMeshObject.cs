@@ -2,6 +2,7 @@
 using Engine.Base;
 using Engine.Components.Cameras;
 using Engine.Components.Graphics;
+using Engine.Components.Physics;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -22,13 +23,14 @@ namespace Client.GameObjects
         public override void Initialize()
         {
             AddComponent(new BasicEffectModel(asset));
-            AddComponent(new RotateObject(new Vector3(90, 50, 0)));
-            AddComponent(new DebugComponent());
-            AddComponent(new FixedCamera(Vector3.Forward,1,10));
+            AddComponent(new BoxBody(1));
+            //AddComponent(new RotateObject(new Vector3(90, 50, 0)));
+            //AddComponent(new DebugComponent());
+            //AddComponent(new FixedCamera(Vector3.Forward,1,10));
 
 
             //AddComponent(new BobbingObject(10.0f));
-            AddComponent(new WaypointFollowScript(this));
+            //AddComponent(new WaypointFollowScript(this));
 
             base.Initialize();
         }

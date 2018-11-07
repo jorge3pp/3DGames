@@ -61,3 +61,6 @@ C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\bin\Windows\x86\Debug\
 C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\bin\Windows\x86\Debug\Content\Textures\robot_0.xnb
 C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\bin\Windows\x86\Debug\Content\Models\plane.xnb
 C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\bin\Windows\x86\Debug\Content\Models\robot.xnb
+C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\bin\Windows\x86\Debug\BEPUik.dll
+C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\bin\Windows\x86\Debug\BEPUphysics.dll
+C:\Users\S00184395\Documents\GitHub\3DGames\Client\Client\bin\Windows\x86\Debug\BEPUutilities.dll

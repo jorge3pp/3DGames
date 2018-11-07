@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Game1.cs" />
+    <Compile Include="GameObjects\Ground.cs" />
     <Compile Include="GameObjects\SimpleMeshObject.cs" />
     <Compile Include="GameObjects\SimplePlayerObject.cs" />
     <Compile Include="GameObjects\Waypoint.cs" />
@@ -54,6 +55,15 @@
     <Compile Include="Scripts\WaypointFollowScript.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="BEPUik">
+      <HintPath>..\BEPUik.dll</HintPath>
+    </Reference>
+    <Reference Include="BEPUphysics">
+      <HintPath>..\BEPUphysics.dll</HintPath>
+    </Reference>
+    <Reference Include="BEPUutilities">
+      <HintPath>..\BEPUutilities.dll</HintPath>
+    </Reference>
     <Reference Include="MonoGame.Framework">
       <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
     </Reference>

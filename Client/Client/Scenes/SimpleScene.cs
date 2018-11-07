@@ -9,6 +9,7 @@ using Engine.Base;
 using Client.Scripts;
 using Engine;
 using System.Diagnostics;
+using Engine.Managers;
 
 namespace Client.Scenes
 {
@@ -24,7 +25,9 @@ namespace Client.Scenes
         public override void Initialize()
         {
             AddObject(new SimplePlayerObject(new Vector3(0, 0, 10)));
-
+            AddObject(new Ground("plane",new Vector3(0,-2,0)));
+            AddObject(new SimpleMeshObject("cube", new Vector3(0, 20, -10)));
+            /*
             var cube1 = new SimpleMeshObject("cube", new Vector3(0, 0, 0));
             var cube2 = new SimpleMeshObject("cube", new Vector3(5, 0, 0));
             AddObject(cube1);
@@ -46,28 +49,36 @@ namespace Client.Scenes
 
             //var comp = plane.GetComponent<RotateObject>();
             // plane.RemoveComponent(comp);
-
-            base.Initialize();
-
             //plane.RemoveComponent<RotateObject>();
 
             cube1Debug = cube1.GetComponent<DebugComponent>();
             cube2Debug = cube2.GetComponent<DebugComponent>();
-
+            */
+            base.Initialize();
         }
 
         public override void Update()
-        {
+        {/*
             if (cube1Debug.AABB.Intersects(cube2Debug.AABB))
             {
                 Debug.WriteLine("Collision!");
             }else
             {
                 Debug.WriteLine("No Collision!");
+            }*/
+
+            if (InputManager.IsMouseLeftClick())
+            {
+                addCube();
             }
 
             base.Update();
         }
         
+        private void addCube()
+        {
+            AddObject(new SimpleMeshObject("cube", new Vector3(0,20,-10)));
+        }
+
     }
 }

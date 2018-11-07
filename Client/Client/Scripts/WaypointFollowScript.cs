@@ -52,7 +52,7 @@ namespace Client.Scripts
 
         public override void Update()
         {
-
+            
             if (Vector3.Distance(Locations[currentIndex],Owner.Location) > 1.0f)
             {
                 Owner.World *= Matrix.CreateTranslation(MoveBetweenLocation(currentIndex)* 10.0f * GameUtilities.DeltaTime);

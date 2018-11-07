@@ -46,3 +46,6 @@ C:\Users\S00184395\Documents\GitHub\3DGames\Client\Engine\obj\Debug\Engine.cspro
 C:\Users\S00184395\Documents\GitHub\3DGames\Client\Engine\obj\Debug\Engine.csproj.CopyComplete
 C:\Users\S00184395\Documents\GitHub\3DGames\Client\Engine\obj\Debug\Engine.dll
 C:\Users\S00184395\Documents\GitHub\3DGames\Client\Engine\obj\Debug\Engine.pdb
+C:\Users\S00184395\Documents\GitHub\3DGames\Client\Engine\bin\Debug\BEPUik.dll
+C:\Users\S00184395\Documents\GitHub\3DGames\Client\Engine\bin\Debug\BEPUphysics.dll
+C:\Users\S00184395\Documents\GitHub\3DGames\Client\Engine\bin\Debug\BEPUutilities.dll

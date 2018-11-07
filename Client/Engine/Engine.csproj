@@ -31,6 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BEPUik">
+      <HintPath>..\BEPUik.dll</HintPath>
+    </Reference>
+    <Reference Include="BEPUphysics">
+      <HintPath>..\BEPUphysics.dll</HintPath>
+    </Reference>
+    <Reference Include="BEPUutilities">
+      <HintPath>..\BEPUutilities.dll</HintPath>
+    </Reference>
     <Reference Include="MonoGame.Framework, Version=3.6.0.1625, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
@@ -55,6 +64,8 @@
     <Compile Include="Components\Cameras\FixedCamera.cs" />
     <Compile Include="Components\Graphics\BasicEffectModel.cs" />
     <Compile Include="Components\Input\PlayerMovementController.cs" />
+    <Compile Include="Components\Physics\StaticMeshBody.cs" />
+    <Compile Include="Components\Physics\BoxBody.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="GameUtilities.cs" />
     <Compile Include="Managers\CameraManager.cs" />
@@ -62,6 +73,7 @@
     <Compile Include="Managers\FrameRateCounter.cs" />
     <Compile Include="Managers\InputManager.cs" />
     <Compile Include="Managers\PhysicsManager.cs" />
+    <Compile Include="MathConverter.cs" />
     <Compile Include="ModelDataExtractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
